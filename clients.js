@@ -17,18 +17,6 @@ mongoose.connect(`mongodb://localhost/${dbName}`)
 // INSERTING DOCUMENTS - `Model.create`
 // https://mongoosejs.com/docs/api.html#model_Model.create
 
-Client.create({
-  name: "Slavica Cirkovic",
-  age: 60,
-  accountActive: true,
-  balance: 31218.56,
-  payments: []
-},
-  (err, result) => {
-    if (err) console.log(err);
-    else console.log('Document inserted', result);
-  }
-);
 
 
 
@@ -36,10 +24,6 @@ Client.create({
 
 // RETRIEVE A SINGLE DOCUMENT - `Model.findById`
 //https://mongoosejs.com/docs/api.html#model_Model.findById
-
-Client.findById('5cc0cc295543162c7451b79b')
-  .then( (result) => console.log(result))
-  .catch( (err) => console.log(err));
 
 
 
@@ -49,9 +33,6 @@ Client.findById('5cc0cc295543162c7451b79b')
 //  INSERT MULTIPLE DOCUMENTS - `Model.insertMany`
 //  https://mongoosejs.com/docs/api.html#model_Model.insertMany
 
-Client.insertMany(data)
-  .then( (result) => console.log(result))
-  .catch(err=> console.log(err))
 
 
 
@@ -60,14 +41,6 @@ Client.insertMany(data)
 //  RETRIEVE DOCUMENTS  - `Model.find`
 //  https://mongoosejs.com/docs/api.html#model_Model.find
 
-Client.find()
-  .then((result) => {
-    let total = 0;
-    result.forEach((client) => total += client.balance);
-
-    console.log(`TOTAL: ${(total).toFixed(2)} USD`);
-  })
-  .catch(err => console.log(err));
 
 
 
@@ -75,12 +48,6 @@ Client.find()
 
 // UPDATE ONE DOCUMENT  - Model.findOneAndUpdate
 // https://mongoosejs.com/docs/api.html#query_Query-findOneAndUpdate
-
-const multiplePayments = [{amount: 650}, {amount: 550}, {amount: 450}];
-
-Client.findOneAndUpdate({ name: 'Carol Whitney' }, { $set: { payments:  multiplePayments } })
-  .then((result) => console.log('Field payments successfuly updated', result))
-  .catch(err => console.log(err));
 
 
 
@@ -90,6 +57,3 @@ Client.findOneAndUpdate({ name: 'Carol Whitney' }, { $set: { payments:  multiple
 // DELETE ONE DOCUMENT -  Model.deleteOne
 //https://mongoosejs.com/docs/api.html#model_Model.deleteOne
 
-Client.deleteOne({ name:'Maddox Leon'})
-   .then( (result) => console.log('Success deleting document', result))
-   .catch(err => console.log(err));
