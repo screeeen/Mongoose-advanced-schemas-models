@@ -14,46 +14,62 @@ mongoose.connect(`mongodb://localhost/${dbName}`)
 
 
 
-// INSERTING DOCUMENTS - `Model.create`
-// https://mongoosejs.com/docs/api.html#model_Model.create
 
 
 
 
 
 
-// RETRIEVE A SINGLE DOCUMENT - `Model.findById`
-//https://mongoosejs.com/docs/api.html#model_Model.findById
+  
+
+
+// INSERTING DOCUMENTS - `Model.create`   // https://mongoosejs.com/docs/api.html#model_Model.create
+let client1 = {
+  name: "Lidia Campos",
+  age: 60,
+  accountActive: true,
+  balance: 31218.56,
+  payments: []
+}
 
 
 
 
 
 
-//  INSERT MULTIPLE DOCUMENTS - `Model.insertMany`
-//  https://mongoosejs.com/docs/api.html#model_Model.insertMany
+
+// RETRIEVE A SINGLE DOCUMENT - `Model.findById`    //https://mongoosejs.com/docs/api.html#model_Model.findById
 
 
 
 
 
 
-//  RETRIEVE DOCUMENTS  - `Model.find`
-//  https://mongoosejs.com/docs/api.html#model_Model.find
+
+//  INSERT MULTIPLE DOCUMENTS - `Model.insertMany`    //  https://mongoosejs.com/docs/api.html#model_Model.insertMany
 
 
 
 
 
 
-// UPDATE ONE DOCUMENT  - Model.findOneAndUpdate
-// https://mongoosejs.com/docs/api.html#query_Query-findOneAndUpdate
+
+//  RETRIEVE DOCUMENTS  - `Model.find`    //  https://mongoosejs.com/docs/api.html#model_Model.find
 
 
 
 
 
 
-// DELETE ONE DOCUMENT -  Model.deleteOne
-//https://mongoosejs.com/docs/api.html#model_Model.deleteOne
+
+// UPDATE ONE DOCUMENT  - Model.findOneAndUpdate    // https://mongoosejs.com/docs/api.html#query_Query-findOneAndUpdate
+
+
+
+
+
+
+
+// DELETE ONE DOCUMENT -  Model.deleteOne   // https://mongoosejs.com/docs/api.html#model_Model.deleteOne
+
 
