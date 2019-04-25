@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const data = require('./data.js');
 const dbName = 'iron-bank';
 
-const Client = require('./models/ClientModel.js');
+const Client = require('./models/ClientModel');
 
 
 // CREATE AN INSTANCE OF CONNECTION TO DATABASE - `example-mongoose` 
@@ -32,7 +32,10 @@ let client1 = {
   payments: []
 }
 
-
+Client.(client1, (err,result)=>{
+if (err) console.log('Error',err);
+else console.log('Document inserted',result);
+})
 
 
 
@@ -40,15 +43,18 @@ let client1 = {
 
 // RETRIEVE A SINGLE DOCUMENT - `Model.findById`    //https://mongoosejs.com/docs/api.html#model_Model.findById
 
-
+Client.findById('')
+.then ((result) =>console.log('Retrieved: ',result))
+.catch((err)=> console.log(err))
 
 
 
 
 
 //  INSERT MULTIPLE DOCUMENTS - `Model.insertMany`    //  https://mongoosejs.com/docs/api.html#model_Model.insertMany
-
-
+Client.insertMany(data)
+.then ((result) =>console.log('Insert Many Retrieved: ',result))
+.catch((err)=> console.log(err))
 
 
 
